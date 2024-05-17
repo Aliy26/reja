@@ -1,1 +1,277 @@
-<div>Hello World! You are in Author Section</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left1">
+            <img
+              src="images/profile.png"
+              alt="profile-image"
+              class="left-image"
+            />
+            <div class="left-name"><%=user.name%></div>
+            <div class="left-profession"><%=user.profession%></div>
+            <div class="left-icons">
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Facebook.svg" alt="" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Instagram.svg" alt="" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Twitter.svg" alt="" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Linkeding.svg" alt="" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Youtube.svg" alt="" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/Dribbble.svg" alt="" class="icon-1 small" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left2">
+            <div class="column">
+              <p>Age:</p>
+              <div class="age"><%=user.age%></div>
+            </div>
+            <div class="column">
+              <p>Residence:</p>
+              <div class="residence"><%=user.residence%></div>
+            </div>
+            <div class="column">
+              <p>Freelance:</p>
+              <div class="available">available</div>
+            </div>
+            <div class="column">
+              <p>Address:</p>
+              <div class="address"><%=user.address%></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left3">
+            <h3>Languages</h3>
+            <div class="column space">
+              <div><%=user.language[0]%>:</div>
+              <div>100%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.language[1]%>:</div>
+              <div>60%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.language[2]%>:</div>
+              <div>90%</div>
+            </div>
+            <div class="marginer-orange"></div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left4">
+            <h3>Skills</h3>
+            <div class="column space">
+              <div><%=user.skills[0]%>:</div>
+              <div>90%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.skills[1]%>:</div>
+              <div>85%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.skills[2]%>:</div>
+              <div>80%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.skills[3]%>:</div>
+              <div>75%</div>
+            </div>
+            <div class="marginer-orange"></div>
+            <div class="column space">
+              <div><%=user.skills[4]%>:</div>
+              <div>85%</div>
+            </div>
+            <div class="marginer-orange"></div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left5">
+            <h3>Extra Skills</h3>
+            <div>
+              <img src="icon/icons.svg" alt="" class="small-icon" />
+              <div class="extra-skill">
+                <%=user.extra_skills[0]%>, <%=user.extra_skills[1]%>
+              </div>
+            </div>
+            <div>
+              <img src="icon/icons.svg" alt="" class="small-icon" />
+              <div class="extra-skill">
+                <%=user.extra_skills[2]%>, <%=user.extra_skills[3]%>
+              </div>
+            </div>
+            <div>
+              <img src="icon/icons.svg" alt="" class="small-icon" />
+              <div class="extra-skill">
+                <%=user.extra_skills[4]%>, <%=user.extra_skills[5]%>
+              </div>
+            </div>
+            <div>
+              <img src="icon/icons.svg" alt="" class="small-icon" />
+              <div class="extra-skill"><%=user.extra_skills[6]%></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+        </div>
+        <div class="mid_frame">
+          <div class="header_section">
+            <img
+              src="small_icons/Ellipse 12.svg"
+              alt=""
+              class="small-icon green-circle"
+            />
+            <img
+              src="small_icons/Ellipse 12.svg"
+              alt=""
+              class="small-icon green-circle-two"
+            />
+            <img
+              src="small_icons/Ellipse15.svg"
+              alt=""
+              class="small-icon orange-circle"
+            />
+            <img
+              src="small_icons/Ellipse15.svg"
+              alt=""
+              class="small-icon orange-circle-two"
+            />
+            <img
+              src="small_icons/Polygon.svg"
+              alt=""
+              class="small-icon triangle"
+            />
+            <img
+              src="small_icons/Rectangle.svg"
+              alt=""
+              class="small-icon blue-rectangle"
+            />
+            <img
+              src="small_icons/orange-square.svg"
+              alt=""
+              class="small-icon orange-square"
+            />
+            <img src="small_icons/orae.svg" alt="" class="small-icon orange" />
+            <div class="left-part">
+              <h1><%=user.profession%> in our <%=user.work_place%></h1>
+              <p class="intro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                harum debitis eaque dolorem inventore, itaque voluptas
+                doloremque ratione. Voluptates praesentium excepturi esse non
+                odio consequatur.
+              </p>
+              <button class="button">
+                <p>HIRE ME</p>
+                <img src="btn_icon/Vector.svg" alt="" class="vector" />
+              </button>
+            </div>
+            <div class="right-part">
+              <img src="images/Your Image 1.png" alt="" class="header_image" />
+            </div>
+          </div>
+          <section class="main">
+            <div class="upper">
+              <h2>My Services</h2>
+              <div class="p">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                  incidunt itaque a ad rem? Unde necessitatibus iusto vitae eius
+                  minus atque quisquam quasi!
+                </p>
+              </div>
+            </div>
+            <div class="middle">
+              <div class="card">
+                <img src="boxes_images/coding.svg" alt="" />
+                <h3>Web Development</h3>
+                <p>Blog, E-Commerce</p>
+              </div>
+              <div class="card">
+                <img src="boxes_images/illustration.png" alt="" />
+                <h3>UI/UX Design</h3>
+                <p>Mobile App, Website Design</p>
+              </div>
+              <div class="card">
+                <img src="boxes_images/Microphone.svg" alt="" />
+                <h3>Sound Design</h3>
+                <p>Voice Over, Beat Making</p>
+              </div>
+              <div class="card">
+                <img src="boxes_images/game-development.svg" alt="" />
+                <h3>Game Design</h3>
+                <p>Character Design, Props & Objects</p>
+              </div>
+              <div class="card">
+                <img src="boxes_images/Photographer.png" alt="" />
+                <h3>Game Design</h3>
+                <p>Portrait, Product Photography</p>
+              </div>
+              <div class="card last">
+                <h3>Advertising</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  totam ipsam, sunt dolorem tenetur, ex quibusdam delectus sin.
+                </p>
+                <h6>ORDER NOW ></h6>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="right_frame">
+          <div class="flex-container">
+            <img src="menu_icon/Contrast.svg" alt="" class="contrast" />
+            <img src="menu_icon/Union.svg" alt="" class="union" />
+            <img src="menu_icon/Home.svg" alt="" class="menu-icon" />
+            <img src="menu_icon/Service.svg" alt="" class="menu-icon" />
+            <img src="menu_icon/Cv.svg" alt="" class="menu-icon" />
+            <img src="menu_icon/Portfolio.svg" alt="" class="menu-icon" />
+            <img src="menu_icon/Blog.svg" alt="" class="menu-icon" />
+            <img src="menu_icon/Contact.svg" alt="" class="menu-icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
