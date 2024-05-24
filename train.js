@@ -1,3 +1,25 @@
+// B-TASK:
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+// @MITASK
+
+const validator = require("validator");
+
+let count = 0;
+const countDigits = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    if (validator.isNumeric(str[i])) {
+      count++;
+    }
+  }
+  return count;
+};
+
+countDigits("ad2a54y79wet0sfgb9");
+console.log(count);
+
 // A-TASK
 
 /* Shunday 2 parametrlik function tuzing, hamda brinchi parameterdagi letterni |
@@ -5,18 +27,18 @@ ikkinchi parametrdagi sozdan qatnashgan sonini return qilishi kerak boldadi.
 MASALAN countLetter("e" "engineer") 3ni return qilishi kerak.
 */
 
-let count = 0;
+// let count = 0;
 
-const countLetter = (a, b) => {
-  for (let i = 0; i <= b.length - 1; i++) {
-    if (b[i] === a) {
-      count++;
-    }
-  }
-  return count;
-};
-countLetter("e", "engineer");
-console.log(count);
+// const countLetter = (a, b) => {
+//   for (let i = 0; i <= b.length - 1; i++) {
+//     if (b[i] === a) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
+// countLetter("e", "engineer");
+// console.log(count);
 
 // const list = [
 //   "yaxshi talaba boling", // 0-20
@@ -82,15 +104,15 @@ maslahatBering(45)
 
 //Callback funtion
 
-console.log("Jack Ma maslahatlari");
-const list = [
-  "yaxshi talaba boling", // 0-20
-  "togri boshliq tanlang va koproq xoto qiling", // 20-30
-  "uzingiz ustida ishlang", // 30-40
-  "siz kuchlik bolgan narsalarni qiling", // 40-50
-  "yoshlarga investitsiya qiling", // 50-60
-  "endi dam oling",
-];
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//   "yaxshi talaba boling", // 0-20
+//   "togri boshliq tanlang va koproq xoto qiling", // 20-30
+//   "uzingiz ustida ishlang", // 30-40
+//   "siz kuchlik bolgan narsalarni qiling", // 40-50
+//   "yoshlarga investitsiya qiling", // 50-60
+//   "endi dam oling",
+// ];
 
 // function maslahatBering(a, callback) {
 //   if (typeof a !== "number") callback("Insert a number", null);

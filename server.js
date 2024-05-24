@@ -1,7 +1,7 @@
 const http = require("http");
 const mongodb = require("mongodb");
 
-let database;
+let db;
 const connectionString =
   "mongodb+srv://Aliy:coursera2@cluster0.pa0zbxu.mongodb.net/Reja";
 
@@ -12,7 +12,7 @@ mongodb.connect(
     if (err) console.log("Error in connecting to MongoDB");
     else {
       console.log("MongoDB connection was successful");
-      //   console.log(client);
+      module.exports = client;
       const app = require("./app");
       const server = http.createServer(app);
       let PORT = 3000;
@@ -24,5 +24,3 @@ mongodb.connect(
     }
   }
 );
-
-console.log("You're in app.js file by the way");
