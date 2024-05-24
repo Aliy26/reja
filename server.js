@@ -34,7 +34,7 @@ app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });
 app.get("/", function (req, res) {
-  res.render("harid");
+  res.render("reja");
 });
 
 const server = http.createServer(app);
