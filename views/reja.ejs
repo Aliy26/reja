@@ -19,53 +19,58 @@
 
     <title>REJA VA MAQSADLAR</title>
   </head>
-  <body style="background: #b8bbd1">
+  <body style="background-color: #b8bbd1">
     <div class="container">
-      <h1 style="text-align: center">REJA VA MAQSADLAR</h1>
-      <div class="jumbotron p-3 shadow-sm">
-        <form action="/create-item" method="POST" id="create-form">
+      <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+
+      <div class="jumbotron p-3 shadow-sn">
+        <form id="create-form" action="/create-item" method="POST">
           <div class="d-flex align-items-center">
             <input
-              type="text"
               id="create-field"
               name="reja"
               autofocus
               autocomplete="off"
-              class="form-control"
+              class="form-control mr3"
               style="flex: 1"
+              type="text"
             />
             <button class="btn btn-primary" style="border-radius: 20px">
-              Yangi Reja Qushish
+              Yangi reja qo'shish
             </button>
           </div>
         </form>
       </div>
+
       <ul id="item-list" class="list-group pb-5">
-        <% items.map(function(item) { %>
+        <% items.map(function(item){ %>
+
         <li
           class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
         >
-          <span class="item-text"><%= item.reja %></span>
+          <span class="item-text"><%=item.reja%></span>
           <div>
             <button
-              data-id="<%= item._id %>"
+              data-id="<%=item._id%>"
               class="edit-me btn btn-secondary btn-sm mr-1"
             >
-              Ozgartirish
+              O'zgartirish
             </button>
             <button
-              data-id="<%= item._id %>"
+              data-id="<%=item._id%>"
               class="delete-me btn btn-danger btn-sm"
             >
-              Ochirish
+              O'chirish
             </button>
           </div>
         </li>
         <% }) %>
       </ul>
+      <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+        Hamma rejalarni o'chirish
+      </button>
     </div>
-    <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
-      Hammasini Rejalarni Ochirish
-    </button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="browser.js"></script>
   </body>
 </html>
