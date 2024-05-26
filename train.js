@@ -1,25 +1,68 @@
-// B-TASK:
+// MITASK-C
 
+// Shunday class tuzing uning nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+// MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+// @MITASK
+const moment = require("moment");
+
+class Shop {
+  non;
+  lagmon;
+  cola;
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${moment().format("h:mm")} da ${this.non} ta non ${
+        this.lagmon
+      } ta lagmon va ${this.cola} cola mavjud!`
+    );
+  }
+
+  sotish(product, amount) {
+    console.log(`${product}, ${amount}`);
+    this.non -= amount;
+  }
+
+  qabul(product, amount) {
+    console.log(`${product}, ${amount}`);
+    this.cola += amount;
+  }
+}
+
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
+
+// B-TASK:
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
 // @MITASK
 
-const validator = require("validator");
+// const validator = require("validator");
 
-let count = 0;
-const countDigits = (str) => {
-  for (let i = 0; i < str.length; i++) {
-    console.log(str[i]);
-    if (validator.isNumeric(str[i])) {
-      count++;
-    }
-  }
-  return count;
-};
+// let count = 0;
+// const countDigits = (str) => {
+//   for (let i = 0; i < str.length; i++) {
+//     console.log(str[i]);
+//     if (validator.isNumeric(str[i])) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
 
-countDigits("ad2a54y79wet0sfgb9");
-console.log(count);
+// countDigits("ad2a54y79wet0sfgb9");
+// console.log(count);
 
 // A-TASK
 

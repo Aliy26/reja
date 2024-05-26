@@ -40,3 +40,25 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       console.log("Please try again!");
     });
 });
+
+document.addEventListener("click", function (e) {
+  // delete operation
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Do you really want to delete the item?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Error occured in deletion");
+        });
+    }
+  }
+  // edit operation
+  if (e.target.classList.contains("edit-me")) {
+    alert("You pressed the edit button");
+  }
+});

@@ -6,7 +6,7 @@ const fs = require("fs");
 
 // MongoDB call
 const db = require("./server").db();
-
+const mongodb = require("mongodb");
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
@@ -37,9 +37,15 @@ app.post("/create-item", (req, res) => {
   });
 });
 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
+// app.post("/delete-item", (req, res) => {
+//   const id = req.body.id;
+//   db.collection("plans").deleteOne(
+//     { _id: new mongodb.ObjectId(id) },
+//     function (err, data) {
+//       res.json({ state: "success" });
+//     }
+//   );
+// });
 
 app.get("/", function (req, res) {
   db.collection("plans")
@@ -53,6 +59,29 @@ app.get("/", function (req, res) {
         res.render("reja", { items: data });
       }
     });
+  app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    console.log("deleted id", id);
+
+    if (mongodb.ObjectId.isValid(id)) {
+      db.collection("plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) },
+        function (err, data) {
+          if (err) {
+            res.json({ state: "error", message: "An error occurred" });
+          } else {
+            res.json({ state: "success" });
+          }
+        }
+      );
+    } else {
+      res.json({ state: "error", message: "Invalid ID format" });
+    }
+  });
+
+  app.get("/author", (req, res) => {
+    res.render("author", { user: user });
+  });
 });
 
 module.exports = app;
