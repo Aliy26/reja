@@ -7,13 +7,13 @@ function itemTemplate(item) {
 <span class="item-text">${item.reja}</span>
   <div>
     <button
-      data-id="${item._id}>"
+      data-id="${item._id}"
       class="edit-me btn btn-secondary btn-sm mr-1"
     >
       O'zgartirish
     </button>
     <button
-      data-id="${item._id}>"
+      data-id="${item._id}"
       class="delete-me btn btn-danger btn-sm"
     >
       O'chirish
