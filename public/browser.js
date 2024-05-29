@@ -41,7 +41,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     });
 });
 
-document.addEventListener("click", function (e) {
+document.addEventListener("click", (e) => {
   // delete operation
   console.log(e.target);
   if (e.target.classList.contains("delete-me")) {

@@ -28,15 +28,6 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing code
-app.post("/create-item", (req, res) => {
-  console.log("body:", req.body);
-  const new_reja = req.body.reja;
-  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-    console.log("data.ops:", data.ops);
-    res.json(data.ops[0]);
-  });
-});
-
 app.get("/", function (req, res) {
   db.collection("plans")
     .find()
@@ -49,40 +40,49 @@ app.get("/", function (req, res) {
         res.render("reja", { items: data });
       }
     });
+});
 
-  app.post("/edit-item", (req, res) => {
-    const data = req.body;
-    console.log(data);
-    db.collection("plans").findOneAndUpdate(
-      { _id: new mongodb.ObjectId(data.id) },
-      { $set: { reja: data.new_input } },
-      (err, data) => {
-        res.json({ state: "success" });
-      }
-    );
+app.post("/create-item", (req, res) => {
+  console.log("body:", req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    console.log("data.ops:", data.ops);
+    res.json(data.ops[0]);
   });
+});
 
-  app.post("/delete-all", (req, res) => {
-    if (req.body.delete_all) {
-      db.collection("plans").deleteMany(() => {
-        res.json({ state: "all plans deleted" });
-      });
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    { _id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    (err, data) => {
+      res.json({ state: "success" });
     }
-  });
+  );
+});
 
-  app.post("/delete-item", (req, res) => {
-    const id = req.body.id;
-    db.collection("plans").deleteOne(
-      { _id: new mongodb.ObjectId(id) },
-      function (err, data) {
-        res.json({ state: "success" });
-      }
-    );
-  });
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
 
-  app.get("/author", (req, res) => {
-    res.render("author", { user: user });
-  });
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(() => {
+      res.json({ state: "all plans deleted" });
+    });
+  }
+});
+
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 module.exports = app;

@@ -1,21 +1,11 @@
-// D-TASK:
+// E-TASK:
 
-// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala
-// string bir hil harflardan iborat bolsa true aks holda false qaytarsin
-// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
 
 // @MITASK
 
-const vacant1 = [];
-const vacant2 = [];
+const getReverse = (str) => str.split("").reverse().join("");
 
-function checkContent(a, b) {
-  for (let value of a) vacant1.push(value);
-  for (let value of b) vacant2.push(value);
-
-  if (vacant1.sort().join("") == vacant2.sort().join("")) return true;
-  else return false;
-}
-
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent("hjgfk", "jfgkh"));
+console.log(getReverse("hello"));
+console.log(getReverse("mit"));
