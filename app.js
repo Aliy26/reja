@@ -51,6 +51,16 @@ app.post("/create-item", (req, res) => {
   });
 });
 
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
 app.post("/edit-item", (req, res) => {
   const data = req.body;
   console.log(data);
@@ -63,15 +73,6 @@ app.post("/edit-item", (req, res) => {
   );
 });
 
-app.post("/delete-item", (req, res) => {
-  const id = req.body.id;
-  db.collection("plans").deleteOne(
-    { _id: new mongodb.ObjectId(id) },
-    function (err, data) {
-      res.json({ state: "success" });
-    }
-  );
-});
 
 app.post("/delete-all", (req, res) => {
   if (req.body.delete_all) {

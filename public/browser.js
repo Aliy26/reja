@@ -37,7 +37,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       createField.focus();
     })
     .catch((err) => {
-      console.log("Please try again!");
+      console.log("Please try again!", err);
     });
 });
 
