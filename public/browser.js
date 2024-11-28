@@ -43,7 +43,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 
 document.addEventListener("click", (e) => {
   // delete operation
-  console.log(e.target);
+
   if (e.target.classList.contains("delete-me")) {
     if (confirm("Do you really want to delete the item?")) {
       axios
@@ -59,11 +59,21 @@ document.addEventListener("click", (e) => {
   }
   // edit operation
   if (e.target.classList.contains("edit-me")) {
-    let userInput = prompt(
-      "Make your change",
+    const oldInfo = Number(
       e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
     );
+
+    let userInput = Number(
+      prompt(
+        "Make your change",
+        (e.target.parentElement.parentElement.querySelector(
+          ".item-text"
+        ).innerHTML = "")
+      )
+    );
     if (userInput) {
+      userInput += oldInfo;
+      console.log(userInput);
       axios
         .post("/edit-item", {
           id: e.target.getAttribute("data-id"),
