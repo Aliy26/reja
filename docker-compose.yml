@@ -1,0 +1,42 @@
+# version: "1.1"
+
+# services:
+#  node:
+#     conatiner_name: reja
+#     restart: always
+#     image: aliyofmit/reja-image
+#     ports:
+#       - 3003:3000
+#     volumes:
+#       - ./:/usr/src/app
+#       working_dir: /usr/src/app
+
+#     networks:
+#       -reja_network
+
+#     command: bash -c "npm install && npm run dev"
+
+#   networks:
+#     reja_network:
+#       driver: bridge
+
+version: "1.1" # It's recommended to use the latest Compose version.
+
+services:
+  node:
+    container_name: reja # Correct spelling: "container_name"
+    restart: always
+    image: aliyofmit/reja-image
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm run dev"
+
+    networks:
+      - reja_network
+
+networks:
+  reja_network:
+    driver: bridge
